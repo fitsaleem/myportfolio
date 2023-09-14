@@ -8,11 +8,11 @@ const projectsData = [
   {
     id: 1,
     title: "React Portfolio Website",
-    description: "Project 1 description",
+    description: "React Portfolio",
     image: "/images/projects/1.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://hamoodas.netlify.app/",
+    previewUrl: "https://hamoodas.netlify.app/",
   },
   {
     id: 2,
@@ -52,12 +52,12 @@ const projectsData = [
   },
   {
     id: 6,
-    title: "Full-stack Roadmap",
-    description: "Project 5 description",
+    title: "Full-stack Applicaton",
+    description: "Next js Movies full stack application",
     image: "/images/projects/6.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/fitsaleem/nextjs-movies-web",
+    previewUrl: "https://nextjs-movies-web.vercel.app/",
   },
 ];
 
