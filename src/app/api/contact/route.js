@@ -13,7 +13,7 @@ export async function POST(request) {
         await contactModel.create(body);
 
         return NextResponse.json({
-            message:"Message sent successfully!"
+            message:"Message sent successfully"
     },
      {
         status: 200
@@ -21,7 +21,7 @@ export async function POST(request) {
     
     catch (error) {
         return NextResponse.json(
-            { message: "Server error, please try again!" },
+            { message: "Server error, please try again" },
             { status: 500 }
         )
     }
