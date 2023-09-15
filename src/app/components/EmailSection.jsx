@@ -65,7 +65,7 @@ const handleSubmit = async (e) => {
                 subject: "",
                 message: ""
             })
-            toast.success('Thanks for submitting!');
+            toast.success('Message Sent Successfully!');
 
         } else {
           toast.error('There was an error during submission.');

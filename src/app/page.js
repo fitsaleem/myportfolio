@@ -11,7 +11,15 @@ import { Toaster } from 'react-hot-toast';
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col bg-[#121212]">
-      <Toaster />
+      <Toaster 
+         position="top-center" 
+         reverseOrder={true}
+         containerStyle={{
+          top:150, 
+           // Adjust this value to position it horizontally.
+         }}
+       
+      />
       <Navbar />
       <div class="container mt-24 mx-auto px-12 py-4">
         <HeroSection />
