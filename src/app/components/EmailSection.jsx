@@ -7,6 +7,8 @@ import Link from "next/link";
 import Image from "next/image";
 import toast from 'react-hot-toast';
 import { TailSpin } from "react-loader-spinner";
+import { useState } from 'react';
+
 
 
 const EmailSection = () => {
@@ -36,6 +38,11 @@ const [user, setUser] = React.useState({
 });
 
 const [status, setStatus] = React.useState(null);
+
+
+// adding  reCAPTCHA
+const [recaptchaValue, setRecaptchaValue] = useState(null);
+
 
 
 const handleSubmit = async (e) => {
@@ -171,6 +178,15 @@ function handleChange(e){
               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
               placeholder="Let's talk about..."
             />
+
+            {/* // for reCAPTCHA  */}
+            <div className="mb-6">
+          <div 
+            className="g-recaptcha" 
+            data-sitekey={process.env.RECAPTCHA_SITE_KEY}
+            data-callback={(value) => setRecaptchaValue(value)}
+          ></div>
+        </div>
           </div>
           {loading ? (
     <div className="flex justify-center items-center">
