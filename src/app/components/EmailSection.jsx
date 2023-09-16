@@ -48,6 +48,11 @@ const [recaptchaValue, setRecaptchaValue] = useState(null);
 const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!recaptchaValue) {
+      toast.error('Please verify you are a human using the reCAPTCHA.');
+      return;
+    }
+
     // Validate the form data
     if (!validate()) {
       return;
@@ -58,11 +63,13 @@ const handleSubmit = async (e) => {
     try {
         const response = await fetch('/api/contact', {
             method:'POST',
-            headers:{"Content_Type":"application/json"},
+            headers:{"Content-Type":"application/json"},
             body: JSON.stringify({
                 email:user.email,
                 subject:user.subject,
-                message:user.message
+                message:user.message,
+                recaptchaValue: recaptchaValue
+
             })
         })
         // Set the status based on the response from the API route

@@ -18,6 +18,9 @@ export async function POST(request) {
         method: 'POST',
     });
 
+    const verificationData = await verificationResponse.json(); 
+
+
     if (!verificationData.success) {
         return NextResponse.json(
             { message: "reCAPTCHA verification failed!" },
