@@ -42,11 +42,18 @@ const [status, setStatus] = React.useState(null);
 
 // adding  reCAPTCHA
 const [recaptchaValue, setRecaptchaValue] = useState(null);
+const [showRecaptcha, setShowRecaptcha] = useState(false);
+
 
 
 
 const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!showRecaptcha) {
+      setShowRecaptcha(true);
+      return;
+    }
 
     if (!recaptchaValue) {
       toast.error('Please verify you are a human using the reCAPTCHA.');
@@ -187,13 +194,17 @@ function handleChange(e){
             />
 
             {/* // for reCAPTCHA  */}
-            <div className="mb-6">
-          <div 
-            className="g-recaptcha" 
-            data-sitekey={process.env.RECAPTCHA_SITE_KEY}
-            data-callback={(value) => setRecaptchaValue(value)}
-          ></div>
-        </div>
+            {showRecaptcha && (
+          <div className="mb-6">
+            <div 
+              className="g-recaptcha" 
+              data-sitekey={process.env.RECAPTCHA_SITE_KEY}
+              data-callback={(value) => setRecaptchaValue(value)}
+            ></div>
+          </div>
+        )}
+
+
           </div>
           {loading ? (
     <div className="flex justify-center items-center">
