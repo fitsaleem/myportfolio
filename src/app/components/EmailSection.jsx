@@ -1,53 +1,45 @@
-'use client'
+"use client";
 
 import React from "react";
 import GithubIcon from "../../../public/github-icon.svg";
 import LinkedinIcon from "../../../public/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
-import toast from 'react-hot-toast';
+import toast from "react-hot-toast";
 import { TailSpin } from "react-loader-spinner";
-import { useState } from 'react';
-
-
+import { useState } from "react";
 
 const EmailSection = () => {
-
   const [loading, setLoading] = React.useState(false);
 
   // adding vlaidation
 
   const validate = () => {
     if (!user.email || !user.subject || !user.message) {
-        toast.error('Please ensure all fields are filled correctly.');
-        return false;
+      toast.error("Please ensure all fields are filled correctly.");
+      return false;
     }
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     if (!emailPattern.test(user.email)) {
-        toast.error('Please enter a valid email address.');
-        return false;
+      toast.error("Please enter a valid email address.");
+      return false;
     }
     return true;
-};
+  };
 
+  const [user, setUser] = React.useState({
+    email: "",
+    subject: "",
+    message: "",
+  });
 
-const [user, setUser] = React.useState({
-  email: "",
-  subject: "",
-  message: ""
-});
+  const [status, setStatus] = React.useState(null);
 
-const [status, setStatus] = React.useState(null);
+  // adding  reCAPTCHA
+  const [recaptchaValue, setRecaptchaValue] = useState(null);
+  const [showRecaptcha, setShowRecaptcha] = useState(true);
 
-
-// adding  reCAPTCHA
-const [recaptchaValue, setRecaptchaValue] = useState(null);
-const [showRecaptcha, setShowRecaptcha] = useState(false);
-
-
-
-
-const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!showRecaptcha) {
@@ -56,63 +48,50 @@ const handleSubmit = async (e) => {
     }
 
     if (!recaptchaValue) {
-      toast.error('Please verify you are a human using the reCAPTCHA.');
+      toast.error("Please verify you are a human using the reCAPTCHA.");
       return;
     }
 
     // Validate the form data
     if (!validate()) {
       return;
-  }
-
-  setLoading(true);
-
-    try {
-        const response = await fetch('/api/contact', {
-            method:'POST',
-            headers:{"Content-Type":"application/json"},
-            body: JSON.stringify({
-                email:user.email,
-                subject:user.subject,
-                message:user.message,
-                recaptchaValue: recaptchaValue
-
-            })
-        })
-        // Set the status based on the response from the API route
-        if (response.status === 200) {
-            setUser({
-                email: "",
-                subject: "",
-                message: ""
-            })
-            toast.success('Message Sent Successfully!');
-
-        } else {
-          toast.error('There was an error during submission.');
-        }
-
-    }catch (e) {
-      toast.error('Server error, please try again later.');
-    }finally{
-      setLoading(false);
-
     }
 
+    setLoading(true);
 
-}
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: user.email,
+          subject: user.subject,
+          message: user.message,
+          recaptchaValue: recaptchaValue,
+        }),
+      });
+      // Set the status based on the response from the API route
+      if (response.status === 200) {
+        setUser({
+          email: "",
+          subject: "",
+          message: "",
+        });
+        toast.success("Message Sent Successfully!");
+      } else {
+        toast.error("There was an error during submission.");
+      }
+    } catch (e) {
+      toast.error("Server error, please try again later.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
-function handleChange(e){
-    setUser({...user, [e.target.name]: e.target.value})
-    console.log(setUser)
-}
-
-
-
-
-
-
-
+  function handleChange(e) {
+    setUser({ ...user, [e.target.name]: e.target.value });
+    
+  }
 
   return (
     <section
@@ -195,30 +174,37 @@ function handleChange(e){
 
             {/* // for reCAPTCHA  */}
             {showRecaptcha && (
-          <div className="mb-6">
-            <div 
-              className="g-recaptcha" 
-              data-sitekey={process.env.RECAPTCHA_SITE_KEY}
-              data-callback={(value) => setRecaptchaValue(value)}
-            ></div>
-          </div>
-        )}
-
-
+              <div className="mb-6">
+                <div
+                  className="g-recaptcha"
+                  data-sitekey={process.env.RECAPTCHA_SITE_KEY}
+                  data-callback={(value) => {
+                    console.log("reCAPTCHA value:", value); 
+                    console.log("Site Key:", process.env.RECAPTCHA_SITE_KEY);
+                    setRecaptchaValue(value);
+                  }}
+                ></div>
+              </div>
+            )}
           </div>
           {loading ? (
-    <div className="flex justify-center items-center">
-        <TailSpin type="ThreeDots" color="#FFFFFF" height={50} width={50} visible={loading}/>
-    </div>
-) : (
-    <button
-        type="submit"
-        className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
-    >
-        Send Message
-    </button>
-)}
-
+            <div className="flex justify-center items-center">
+              <TailSpin
+                type="ThreeDots"
+                color="#FFFFFF"
+                height={50}
+                width={50}
+                visible={loading}
+              />
+            </div>
+          ) : (
+            <button
+              type="submit"
+              className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
+            >
+              Send Message
+            </button>
+          )}
         </form>
       </div>
     </section>

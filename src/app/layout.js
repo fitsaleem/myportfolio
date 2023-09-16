@@ -15,6 +15,7 @@ export default function RootLayout({ children }) {
           <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
           {/* Add the reCAPTCHA script here */}
           <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
           <title>{metadata.title}</title>
         </head>
         <body>
