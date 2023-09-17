@@ -37,7 +37,7 @@ const EmailSection = () => {
 
   // adding  reCAPTCHA
   const [recaptchaValue, setRecaptchaValue] = useState(null);
-  const [showRecaptcha, setShowRecaptcha] = useState(true);
+  const [showRecaptcha, setShowRecaptcha] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
