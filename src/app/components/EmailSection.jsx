@@ -158,22 +158,32 @@ const EmailSection = () => {
 
           </div>
           {loading ? (
-            <div className="flex justify-center items-center">
+             <button
+             type="submit"
+             className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2 px-5 rounded-lg w-full"
+           >
+             <div className="flex justify-center items-center ">
               <TailSpin
                 type="ThreeDots"
                 color="#FFFFFF"
-                height={50}
-                width={50}
+                height={30}
+                width={40}
                 visible={loading}
               />
+              <span className="mx-3">Loading...</span>
             </div>
+           </button>
+           
           ) : (
+
             <button
               type="submit"
-              className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
+              className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-5 rounded-lg w-full"
             >
               Send Message
             </button>
+            
+           
           )}
         </form>
       </div>
