@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
           
                     {/* Add the reCAPTCHA script here */}
 
-          <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+          {/* <script src="https://www.google.com/recaptcha/api.js" async defer></script> */}
 
         </body>
       </html>

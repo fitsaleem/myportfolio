@@ -7,7 +7,6 @@ import Link from "next/link";
 import Image from "next/image";
 import toast from "react-hot-toast";
 import { TailSpin } from "react-loader-spinner";
-import { useState } from "react";
 
 const EmailSection = () => {
   const [loading, setLoading] = React.useState(false);
@@ -35,22 +34,8 @@ const EmailSection = () => {
 
   const [status, setStatus] = React.useState(null);
 
-  // adding  reCAPTCHA
-  const [recaptchaValue, setRecaptchaValue] = useState(null);
-  const [showRecaptcha, setShowRecaptcha] = useState(false);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (!showRecaptcha) {
-      setShowRecaptcha(true);
-      return;
-    }
-
-    if (!recaptchaValue) {
-      toast.error("Please verify you are a human using the reCAPTCHA.");
-      return;
-    }
 
     // Validate the form data
     if (!validate()) {
@@ -67,7 +52,6 @@ const EmailSection = () => {
           email: user.email,
           subject: user.subject,
           message: user.message,
-          recaptchaValue: recaptchaValue,
         }),
       });
       // Set the status based on the response from the API route
@@ -172,20 +156,6 @@ const EmailSection = () => {
               placeholder="Let's talk about..."
             />
 
-            {/* // for reCAPTCHA  */}
-            {showRecaptcha && (
-              <div className="mb-6">
-                <div
-                  className="g-recaptcha"
-                  data-sitekey={process.env.RECAPTCHA_SITE_KEY}
-                  data-callback={(value) => {
-                    console.log("reCAPTCHA value:", value); 
-                    console.log("Site Key:", process.env.RECAPTCHA_SITE_KEY);
-                    setRecaptchaValue(value);
-                  }}
-                ></div>
-              </div>
-            )}
           </div>
           {loading ? (
             <div className="flex justify-center items-center">
