@@ -13,6 +13,7 @@ export default function RootLayout({ children }) {
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+          <meta name="google-site-verification" content="nUs1sZlixkttFP_uk2dtojO4an6Aw90hyysa7U08hk8" />
           
           {/* Add the keywords meta tag here */}
           <meta name="keywords" content="Web Development, Computer Science, Coding Tutorials, Blockchain Technology, Web3 Development, Cloud Computing, JavaScript Programming, Next.js Tutorials, Blockchain Development, Cloud Services, Web Development Guides, Computer Science Lessons, Coding for Beginners, Advanced Coding Techniques, Blockchain for Beginners, Web3 Applications, Cloud Infrastructure, Full Stack Development, Frontend Development, Backend Development" />
