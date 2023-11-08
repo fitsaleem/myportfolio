@@ -23,13 +23,13 @@ export default function RootLayout({ children }) {
         <meta property="og:type" content="website"/>
         <meta property="og:title" content="FitCodding | Master Web3 Development, Blockchain, and Cloud Computing"/>
         <meta property="og:description" content="FitCodding is your ultimate resource for mastering web development, computer science, and coding. Dive into the world of blockchain, explore web3 development, and unlock the potential of cloud computing with our comprehensive guides and tutorials."/>
-        <meta property="og:image" content="https://cdn.builder.io/api/v1/image/assets%2F167f9ae46d92433593fe8462bf97f4f3%2F6fe77d4677cf427aba5d7085d2f75cab"/>
+        <meta property="og:image" content="https://vercel.com/fitsaleem/saleem-raza/BKw5PAi37f4PfDGdMiC4iuk2nmW6/source?f=out%2Fimages%2Fhero-image1.png"/>
         <meta name="twitter:card" content="summary_large_image"/>
         <meta property="twitter:domain" content="fitcodding.com"/>
         <meta property="twitter:url" content="https://www.fitcodding.com" />
         <meta name="twitter:title" content="FitCodding | Master Web3 Development, Blockchain, and Cloud Computing"/>
         <meta name="twitter:description" content="FitCodding is your ultimate resource for mastering web development, computer science, and coding. Dive into the world of blockchain, explore web3 development, and unlock the potential of cloud computing with our comprehensive guides and tutorials." />
-        <meta name="twitter:image" content="https://cdn.builder.io/api/v1/image/assets%2F167f9ae46d92433593fe8462bf97f4f3%2F6fe77d4677cf427aba5d7085d2f75cab"/>
+        <meta name="twitter:image" content="https://vercel.com/fitsaleem/saleem-raza/BKw5PAi37f4PfDGdMiC4iuk2nmW6/source?f=out%2Fimages%2Fhero-image1.png"/>
           <meta
           name="description"
           content="FitCodding is your ultimate resource for mastering web development, computer science, and coding. Dive into the world of blockchain, explore web3 development, and unlock the potential of cloud computing with our comprehensive guides and tutorials."
