@@ -1,4 +1,5 @@
 import './globals.css'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata = {
   title: 'FitCodding | Master Web3 Development, Blockchain, and Cloud Computing',
@@ -40,6 +41,7 @@ export default function RootLayout({ children }) {
           <meta name="description" content={metadata.description} />
         </head>
         <body>
+        <SpeedInsights/>
           {children}
 
           
