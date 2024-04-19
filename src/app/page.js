@@ -20,6 +20,7 @@ export default function Home() {
           content="FitCodding is your ultimate resource for mastering web development, computer science, and coding. Dive into the world of blockchain, explore web3 development, and unlock the potential of cloud computing with our comprehensive guides and tutorials."
         />
           <meta name="keywords" content="Web Development, Computer Science, Coding Tutorials, Blockchain Technology, Web3 Development, Cloud Computing, JavaScript Programming, Next.js Tutorials, Blockchain Development, Cloud Services, Web Development Guides, Computer Science Lessons, Coding for Beginners, Advanced Coding Techniques, Blockchain for Beginners, Web3 Applications, Cloud Infrastructure, Full Stack Development, Frontend Development, Backend Development" />
+          
       </Head>
       <main className="flex min-h-screen flex-col bg-[#121212]">
         <Toaster

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700 display=swap');
+
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -25,6 +29,7 @@ body {
     )
     rgb(var(--background-start-rgb));
     overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
 
 }
 
@@ -32,5 +37,6 @@ img {
   max-width: 100%;
   height: auto;
 }
+
 
 
