@@ -10,7 +10,13 @@ export async function POST(request) {
         const body = await request.json();
 
         await dbConfig();
-        await contactModel.create(body);
+        await contactModel.create(
+            {
+                name: body.name,
+                email: body.email,
+                message: body.message
+            }
+        );
         return NextResponse.json({
             message:"Message sent successfully"
     },

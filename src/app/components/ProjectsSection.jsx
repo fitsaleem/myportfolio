@@ -9,7 +9,7 @@ const projectsData = [
     id: 1,
     title: "Next.js CarHub Website",
     description: "Find, book, rent a car—quick and super easy!",
-    image: "/images/projects/7.png",
+    image: "/images/projects/1.png",
     tag: ["All", "Next.js"],
     previewUrl: "https://carhub-coral.vercel.app/",
   },
@@ -17,41 +17,33 @@ const projectsData = [
     id: 2,
     title: "Full Stack Next.js E-commerce Website",
     description: "E-commerce website built with Next.js and Node.js with Stripe integration." ,
-    image: "/images/projects/2.jpg",
+    image: "/images/projects/2.png",
     tag: ["All", "Next.js"],
     previewUrl: "https://nextjs-ecomerce-1.vercel.app/",
   },
   {
     id: 3,
-    title: "E-commerce Application",
-    description: "E-commerce Application",
+    title: "MERN Stack E-Learning Platform",
+    description: "E-learning platform built with MERN stack.",
     image: "/images/projects/3.png",
-    tag: ["All", "Next.js"],
-    previewUrl: "https://github.com/fitsaleem/e-comerce-website",
+    tag: ["All", "MERN"],
+    previewUrl: "https://nemonx.com/",
   },
   {
     id: 4,
-    title: "software development Application",
-    description: " software development consulting services for businesses.",
-    image: "/images/projects/9.png",
-    tag: ["All", "Mobile"],
-    previewUrl: "https://fitcodding.netlify.app/",
+    title: "WordPress E-commerce Website",
+    description: "E-commerce website built with WordPress , WooCommerce and WPBakery Page Builder.",
+    image: "/images/projects/4.png",
+    tag: ["All", "WordPress"],
+    previewUrl: "https://matt.eagerfinch.com/",
   },
   {
     id: 5,
-    title: "Full-stack Applicaton",
-    description: "Next js CarHab full stack application",
-    image: "/images/projects/7.png",
-    tag: ["All", "Web"],
-    previewUrl: "https://carhub-coral.vercel.app/",
-  },
-  {
-    id: 6,
-    title: "Full-stack Applicaton",
-    description: "Next js Movies full stack application",
-    image: "/images/projects/8.png",
-    tag: ["All", "Web"],
-    previewUrl: "https://nextjs-movies-web.vercel.app/",
+    title: "Shopify E-commerce Website",
+    description: "E-commerce website built with Shopify and custom theme desige and integratio with custom application for product customization and order management.",
+    image: "/images/projects/5.png",
+    tag: ["All", "Shopify"],
+    previewUrl: "https://koloracrylic.com/",
   },
 ];
 
@@ -78,7 +70,7 @@ const ProjectsSection = () => {
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
         My Projects
       </h2>
-      <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
+      <div className="text-white flex flex-row justify-center items-center gap-2 py-6 flex-wrap">
         <ProjectTag
           onClick={handleTagChange}
           name="All"
