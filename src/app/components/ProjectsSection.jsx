@@ -76,7 +76,7 @@ const projectsData = [
     id: 9,
     title: "Logo Provident Website",
     description: "The Logo Design Agency That Crafts Distinctive Logos",
-    image: "/images/projects/1.png",
+    image: "/images/projects/9.png",
     tag: ["All", "Web"],
     previewUrl: "https://www.logoprovident.com/",
   },
