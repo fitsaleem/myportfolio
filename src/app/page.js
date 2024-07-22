@@ -34,7 +34,7 @@ export default function Home() {
         <Navbar />
         <div class="container mt-24 mx-auto px-12 py-4">
           <HeroSection />
-          <AchievementsSection />
+          {/* <AchievementsSection /> */}
           <AboutSection />
           <ProjectsSection />
           <EmailSection />

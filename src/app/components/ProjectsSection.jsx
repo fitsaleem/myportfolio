@@ -10,7 +10,7 @@ const projectsData = [
     title: "Next.js CarHub Website",
     description: "Find, book, rent a car—quick and super easy!",
     image: "/images/projects/1.png",
-    tag: ["All", "Next.js"],
+    tag: ["All", "Next.js","Web"],
     previewUrl: "https://carhub-coral.vercel.app/",
   },
   {
@@ -18,7 +18,7 @@ const projectsData = [
     title: "Full Stack Next.js E-commerce Website",
     description: "E-commerce website built with Next.js and Node.js with Stripe integration." ,
     image: "/images/projects/2.png",
-    tag: ["All", "Next.js"],
+    tag: ["All", "Next.js" ,"Web"],
     previewUrl: "https://nextjs-ecomerce-1.vercel.app/",
   },
   {
@@ -26,7 +26,7 @@ const projectsData = [
     title: "MERN Stack E-Learning Platform",
     description: "E-learning platform built with MERN stack.",
     image: "/images/projects/3.png",
-    tag: ["All", "MERN"],
+    tag: ["All", "MERN" ,"Web"],
     previewUrl: "https://nemonx.com/",
   },
   {
@@ -44,6 +44,15 @@ const projectsData = [
     image: "/images/projects/5.png",
     tag: ["All", "Shopify"],
     previewUrl: "https://koloracrylic.com/",
+  },
+
+  {
+    id: 5,
+    title: "Glow Scout Treatment Next.js Website",
+    description: "Glow Scout Treatment Next.js Website",
+    image: "/images/projects/6.png",
+    tag: ["All", "Next.js" ,"Web"],
+    previewUrl: "https://glow-scout-nextjs-14.vercel.app/",
   },
 ];
 
@@ -74,6 +83,12 @@ const ProjectsSection = () => {
         <ProjectTag
           onClick={handleTagChange}
           name="All"
+          isSelected={tag === "All"}
+        />
+
+<ProjectTag
+          onClick={handleTagChange}
+          name="Web"
           isSelected={tag === "All"}
         />
         <ProjectTag
