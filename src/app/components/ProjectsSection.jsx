@@ -71,6 +71,15 @@ const projectsData = [
     tag: ["All", "Next.js","Web"],
     previewUrl: "https://carhub-coral.vercel.app/",
   },
+
+  {
+    id: 9,
+    title: "Logo Provident Website",
+    description: "The Logo Design Agency That Crafts Distinctive Logos",
+    image: "/images/projects/1.png",
+    tag: ["All", "Web"],
+    previewUrl: "https://www.logoprovident.com/",
+  },
   
 ];
 
