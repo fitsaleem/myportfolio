@@ -7,12 +7,13 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
-    title: "Next.js CarHub Website",
-    description: "Find, book, rent a car—quick and super easy!",
-    image: "/images/projects/1.png",
-    tag: ["All", "Next.js","Web"],
-    previewUrl: "https://carhub-coral.vercel.app/",
+    title: "Digital Teach Website",
+    description: "Top-Tier Website Development Services ",
+    image: "/images/projects/8.png",
+    tag: ["All","Web"],
+    previewUrl: "https://www.revoltechdigital.com/",
   },
+  
   {
     id: 2,
     title: "Full Stack Next.js E-commerce Website",
@@ -47,13 +48,30 @@ const projectsData = [
   },
 
   {
-    id: 5,
+    id: 6,
     title: "Glow Scout Treatment Next.js Website",
     description: "Glow Scout Treatment Next.js Website",
     image: "/images/projects/6.png",
     tag: ["All", "Next.js" ,"Web"],
     previewUrl: "https://glow-scout-nextjs-14.vercel.app/",
   },
+  {
+    id: 7,
+    title: "Barber Shop Website",
+    description: "Barber Shop Website STAY SHARP STAY NORTHY ",
+    image: "/images/projects/7.png",
+    tag: ["All","Web"],
+    previewUrl: "http://northybarbershop.com/",
+  },
+  {
+    id: 8,
+    title: "Next.js CarHub Website",
+    description: "Find, book, rent a car—quick and super easy!",
+    image: "/images/projects/1.png",
+    tag: ["All", "Next.js","Web"],
+    previewUrl: "https://carhub-coral.vercel.app/",
+  },
+  
 ];
 
 const ProjectsSection = () => {
