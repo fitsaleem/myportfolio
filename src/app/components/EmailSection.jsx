@@ -54,8 +54,8 @@ const EmailSection = () => {
           message: user.message,
         }),
       });
-      // Set the status based on the response from the API route
       if (response.status === 200) {
+        
         setUser({
           email: "",
           subject: "",

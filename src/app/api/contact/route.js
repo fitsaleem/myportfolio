@@ -12,7 +12,7 @@ export async function POST(request) {
         await dbConfig();
         await contactModel.create(
             {
-                name: body.name,
+                subject: body.subject,
                 email: body.email,
                 message: body.message
             }
